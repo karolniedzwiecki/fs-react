@@ -41,7 +41,6 @@ class Column extends React.Component {
           {this.state.cards.map(({key, ...cardProps}) => (
             <Card key={key} {...cardProps} />
           ))}
-
           <div className={styles.creator}>
             <Creator text={settings.cardCreatorText} action={title => this.addCard(title)}/>
           </div>

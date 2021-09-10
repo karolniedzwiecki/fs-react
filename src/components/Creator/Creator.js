@@ -15,6 +15,7 @@ class Creator extends React.Component {
   state = {
     value: '',
     visibleButtons: false,
+    amount: '',
   }
 
   handleChange = event => {
@@ -42,6 +43,15 @@ class Creator extends React.Component {
     });
   }
 
+  handleAlert = () => {
+    if(window.confirm("Do you really want to leave?")){
+      this.setState({
+      value: '',
+      visibleButtons: false
+      })
+    }
+  }
+
   render() {
     return (
       <div className={styles.component}>
@@ -53,7 +63,7 @@ class Creator extends React.Component {
         />
         <div className={styles.buttons + (this.state.visibleButtons ? ' ' + styles.buttonsShown : '')}>
           <Button onClick={this.handleOK}>OK</Button>
-          <Button onClick={this.handleCancel} variant='danger'>cancel</Button>
+          <Button onClick={this.handleAlert} variant='danger'>cancel</Button>
         </div>
       </div>
     );
