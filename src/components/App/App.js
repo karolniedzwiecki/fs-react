@@ -16,7 +16,6 @@ class App extends React.Component {
     subtitle: PropTypes.node,
     lists: PropTypes.array,
   }
-
   // addList(title) {
   //   this.setState(state => (
   //     {
