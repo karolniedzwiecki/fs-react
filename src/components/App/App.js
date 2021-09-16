@@ -16,19 +16,19 @@ class App extends React.Component {
     lists: PropTypes.array,
   }
 
-  addList(title) {
-    this.setState(state => (
-      {
-        lists: [
-          ...state.lists,
-          {
-            key: state.lists.length ? state.lists[state.lists.length-1].key+1 : 0,
-            title,
-          },
-        ],
-      }
-    ));
-  }
+  // addList(title) {
+  //   this.setState(state => (
+  //     {
+  //       lists: [
+  //         ...state.lists,
+  //         {
+  //           key: state.lists.length ? state.lists[state.lists.length-1].key+1 : 0,
+  //           title,
+  //         },
+  //       ],
+  //     }
+  //   ));
+  // }
   render() {
     const {title, subtitle, lists} = this.props;
     return (
