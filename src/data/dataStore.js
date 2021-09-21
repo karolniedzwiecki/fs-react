@@ -31,10 +31,12 @@ export const listData = {
       cards: [
         {
           key: 0,
+          //index: 0,
           title: 'This Is Going to Hurt',
         },
         {
           key: 1,
+          //index: 1,
           title: 'Interpreter of Maladies',
         },
       ],
@@ -46,10 +48,12 @@ export const listData = {
       cards: [
         {
           key: 0,
+          //index: 0,
           title: 'Harry Potter',
         },
         {
           key: 1,
+          //index: 1,
           title: 'Star Wars',
         },
       ],
@@ -61,10 +65,12 @@ export const listData = {
       cards: [
         {
           key: 0,
+          //index: 0,
           title: 'The Witcher',
         },
         {
           key: 1,
+          //index: 1,
           title: 'Skyrim',
         },
       ],
@@ -75,6 +81,7 @@ export const listData = {
 const lists = [
   {
     id: 'list-1',
+    index: 0,
     title: 'Things to do <sup>soon!</sup>',
     description: 'Interesting things I want to check out!',
     image: 'http://uploads.kodilla.com/bootcamp/fer/11.react/space.png',
@@ -111,31 +118,37 @@ const columns = [
 const cards = [
   {
     id: 'card-1',
+    index: 0,
     columnId: 'column-1',
     title: 'This Is Going to Hurt',
   },
   {
     id: 'card-2',
+    index: 1,
     columnId: 'column-1',
     title: 'Interpreter of Maladies',
   },
   {
     id: 'card-3',
+    index: 0,
     columnId: 'column-2',
     title: 'Harry Potter',
   },
   {
     id: 'card-4',
+    index: 1,
     columnId: 'column-2',
     title: 'Star Wars',
   },
   {
     id: 'card-5',
+    index: 0,
     columnId: 'column-3',
     title: 'The Witcher',
   },
   {
     id: 'card-6',
+    index: 1,
     columnId: 'column-3',
     title: 'Skyrim',
   },
