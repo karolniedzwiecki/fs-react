@@ -12,11 +12,38 @@ export const settings = {
   },
   defaultListDescription: '<p>I can do all the things!!!</p>',
   defaultColumnIcon: 'list-alt',
+  defaultHeaderIcon: 'space-shuttle',
+  defaultListImage: 'https://images.pexels.com/photos/194094/pexels-photo-194094.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
 };
 
 export const pageContents = {
   title: 'My first React app',
   subtitle: 'A simple to-do app, with lists, columns and cards',
+  categoryTitle: 'Main',
+};
+
+export const infoContents = {
+  categoryTitle: 'Info',
+  title: 'About us',
+  image: 'https://i.postimg.cc/9FxDzRbC/pexels-johannes-plenio-1114900.jpg',
+  infoTitle: 'Info',
+  infoText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.',
+  contactTitle: 'Contact',
+  contactText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.',
+  contactTel: 'tel: 233 432 323',
+  contactEmail: 'lorem@info.com',
+};
+
+export const faqContents = {
+  categoryTitle: 'FAQ',
+  title: 'FAQ',
+  image: 'https://i.postimg.cc/9FxDzRbC/pexels-johannes-plenio-1114900.jpg',
+  faqTitle: '1. Lorem ipsum',
+  faqText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.',
+  faqTitle1: '2. Lorem ipsum',
+  faqText1: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.',
+  faqTitle2: '3. Lorem ipsum',
+  faqText2: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.',
 };
 
 export const listData = {

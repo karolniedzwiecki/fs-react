@@ -17,21 +17,21 @@ export const createActionAddCard = payload => ({ payload: { ...payload, id: shor
 export const createAction_moveCard = payload => ({ payload: {...payload}, type: MOVE_CARD });
 
 // reducer
-export default function reducer(state = [], action = {}) {
+export default function reducer(statePart = [], action = {}) {
   switch (action.type) {
     case ADD_CARD:
-      return [...state, action.payload];
+      return [...statePart, action.payload];
       case MOVE_CARD: {
         const {id, src, dest} = action.payload;
-        const targetCard = state.filter(card => card.id == id)[0];
-        const targetColumnCards = state.filter(card => card.columnId == dest.columnId).sort((a, b) => a.index - b.index);
+        const targetCard = statePart.filter(card => card.id == id)[0];
+        const targetColumnCards = statePart.filter(card => card.columnId == dest.columnId).sort((a, b) => a.index - b.index);
         console.log(targetColumnCards.map(card => `${card.index}, title: ${card.title}`));
 
         if(dest.columnId == src.columnId){
           targetColumnCards.splice(src.index, 1);
           targetColumnCards.splice(dest.index, 0, targetCard);
 
-          return state.map(card => {
+          return statePart.map(card => {
             const targetColumnIndex = targetColumnCards.indexOf(card);
 
             if(targetColumnIndex > -1 && card.index != targetColumnIndex){
@@ -41,7 +41,7 @@ export default function reducer(state = [], action = {}) {
             }
           });
         } else {
-          let sourceColumnCards = state.filter(card => card.columnId == src.columnId).sort((a, b) => a.index - b.index);
+          let sourceColumnCards = statePart.filter(card => card.columnId == src.columnId).sort((a, b) => a.index - b.index);
 
           // remove card from sourceColumn
           sourceColumnCards.splice(src.index, 1);
@@ -53,7 +53,7 @@ export default function reducer(state = [], action = {}) {
           console.log('targetColumnCards:');
           console.log(targetColumnCards.map(card => `${card.index}, title: ${card.title}`));
 
-          return state.map(card => {
+          return statePart.map(card => {
             const targetColumnIndex = targetColumnCards.indexOf(card);
 
             if(card == targetCard){
@@ -78,6 +78,6 @@ export default function reducer(state = [], action = {}) {
         }
       }
     default:
-      return state;
+      return statePart;
   }
 }
