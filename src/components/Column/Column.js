@@ -5,7 +5,7 @@ import {settings} from '../../data/dataStore';
 import Card from '../Card/Card';
 import Creator from '../Creator/Creator';
 import Icon from '../Icon/Icon';
-import {Droppable} from 'react-beautiful-dnd';
+//import {Droppable} from 'react-beautiful-dnd';
 
 class Column extends React.Component {
 
@@ -14,7 +14,7 @@ class Column extends React.Component {
     cards: PropTypes.array,
     icon: PropTypes.string,
     addCard: PropTypes.func,
-    id: PropTypes.string,
+    //id: PropTypes.string,
   }
 
   static defaultProps = {
@@ -22,7 +22,7 @@ class Column extends React.Component {
   }
 
   render() {
-    const {title, icon, cards, addCard, id} = this.props;
+    const {title, icon, cards, addCard/*, id*/} = this.props;
     cards.sort((a, b) => a.index - b.index);
     return (
       <section className={styles.component}>
@@ -31,7 +31,7 @@ class Column extends React.Component {
           <span className={styles.icon}>
             <Icon name={icon}></Icon></span>
         </div>
-        <Droppable droppableId={id}>
+        {/*}<Droppable droppableId={id}>
           {provided => (
             <div
               className={styles.cards}
@@ -45,14 +45,19 @@ class Column extends React.Component {
               {provided.placeholder}
             </div>
           )}
-        </Droppable>
+        </Droppable>/*}
 
         {/*
         {this.state.cards.map(({key, ...cardProps}) => (
           <Card key={key} {...cardProps} />
         ))}
           */}
-        <div className={styles.creator}>
+        <div className={styles.cards}>
+          {cards.map(cardData => (
+            <Card key={cardData.id} {...cardData} />
+          ))}
+        </div>
+        <div>
           <Creator text={settings.cardCreatorText} action={addCard}/>
         </div>
       </section>

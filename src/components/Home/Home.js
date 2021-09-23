@@ -1,11 +1,11 @@
 import React from 'react';
 import styles from './Home.scss';
-import List from '../List/ListContainer.js';
+import ListLink from '../ListLink/ListLink.js';
 //import {listData, settings} from '../../data/dataStore';
 //import Creator from '../Creator/Creator.js';
 import PropTypes from 'prop-types';
-import Search from '../Search/SearchContainer.js';
-import {DragDropContext} from 'react-beautiful-dnd';
+//import Search from '../Search/SearchContainer.js';
+//import {DragDropContext} from 'react-beautiful-dnd';
 
 class Home extends React.Component {
   state = {
@@ -17,7 +17,7 @@ class Home extends React.Component {
     title: PropTypes.node,
     subtitle: PropTypes.node,
     lists: PropTypes.array,
-    moveCard: PropTypes.func,
+    //moveCard: PropTypes.func,
   }
   // addList(title) {
   //   this.setState(state => (
@@ -33,47 +33,50 @@ class Home extends React.Component {
   //   ));
   // }
   render() {
-    const {title, subtitle, lists, moveCard} = this.props;
+    const {title, subtitle, lists/*, moveCard*/} = this.props;
 
-    const moveCardHandler = result => {
-      // console.log(result);
-      if(
-        result.destination
-        &&
-        (
-          result.destination.index != result.source.index
-          ||
-          result.destination.droppableId != result.source.droppableId
-        )
-      ){
-        moveCard({
-        //console.log({
-          id: result.draggableId,
-          dest: {
-            index: result.destination.index,
-            columnId: result.destination.droppableId,
-          },
-          src: {
-            index: result.source.index,
-            columnId: result.source.droppableId,
-          },
-        });
-      }
-    };
+    // const moveCardHandler = result => {
+    //   // console.log(result);
+    //   if(
+    //     result.destination
+    //     &&
+    //     (
+    //       result.destination.index != result.source.index
+    //       ||
+    //       result.destination.droppableId != result.source.droppableId
+    //     )
+    //   ){
+    //     moveCard({
+    //     //console.log({
+    //       id: result.draggableId,
+    //       dest: {
+    //         index: result.destination.index,
+    //         columnId: result.destination.droppableId,
+    //       },
+    //       src: {
+    //         index: result.source.index,
+    //         columnId: result.source.droppableId,
+    //       },
+    //     });
+    //   }
+    // };
 
     return (
       <main className={styles.component}>
         <h1 className={styles.title}>{title}</h1>
         <h2 className={styles.subtitle}>{subtitle}</h2>
-        <Search />
+        {/*<Search />
         <DragDropContext onDragEnd={moveCardHandler}>
           {lists.map(listData => (
-            <List key={listData.id} {...listData} />
+            <ListLink key={listData.id} {...listData} />
           ))}
         </DragDropContext>
         {/*
         <List {...listData} />
         */}
+        {lists.map(listData => (
+          <ListLink key={listData.id} {...listData} />
+        ))}
       </main>
     );
   }
