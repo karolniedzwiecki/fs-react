@@ -46,6 +46,12 @@ export const faqContents = {
   faqText2: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.',
 };
 
+export const searchingContent = {
+  title: 'Search Results',
+  image: 'https://i.postimg.cc/9FxDzRbC/pexels-johannes-plenio-1114900.jpg',
+  icon: 'fas fa-search',
+};
+
 export const listData = {
   title: 'Things to do <sup>soon!</sup>',
   description: 'Interesting things I want to check out!',
